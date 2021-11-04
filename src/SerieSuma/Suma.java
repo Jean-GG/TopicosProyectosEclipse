@@ -16,5 +16,5 @@ public class Suma {
 
 			System.out.println(suma);
 	}
-
+	}
 }
