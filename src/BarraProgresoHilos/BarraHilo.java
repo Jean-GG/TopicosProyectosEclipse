@@ -19,7 +19,7 @@ public class BarraHilo extends JFrame {
 	 * Launch the application.
 	 */
 	private static final long serialVersionUID = 1L;
-	private boolean flagR = false;
+	//private boolean flagR = false;
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -32,7 +32,6 @@ public class BarraHilo extends JFrame {
 			}
 		});
 	}
-
 	/**
 	 * Create the frame.
 	 */
@@ -53,26 +52,18 @@ public class BarraHilo extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 			     try {
-			    	 if(!flagR) {
-			         for(int i = 0; i <= 99; i++) {
+			         for(int i = 0; i <= 100; i++) {
 			        	 Thread.sleep(400);
-			             i += 10;
+			             i += 5;
 			             BarraPogreso.setValue(i);
-			         }
-			         flagR = true;
-			         JOptionPane.showMessageDialog(null,"Terminado");
-			         return;
+			         JOptionPane.showMessageDialog(null,"Corriendo");
 			    	 }
-			         if(flagR) {
-			        	 BarraPogreso.setValue(0);
-			        	 flagR = false;
-			        	 return;
-			         }
 			        	 
 			     }
 			     catch (Exception ex) {
 			         System.err.println( ex.getMessage() );
 			     }
+		         JOptionPane.showMessageDialog(null,"Terminado");
 			}
 		});
 		btnComenzar.setBounds(155, 147, 128, 23);
